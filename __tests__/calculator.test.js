@@ -1,5 +1,8 @@
 const calculator = require('../calculator');
 const stringLength = require('../stringcount');
+const reverseString = require('../reverse');
+const cap = require('../cap');
+
 
 describe('calculator tests', () => {
   test('adding 1 + 2 should return 3', () => {
@@ -50,5 +53,17 @@ describe('stringcount tests', () => {
   });
   test('string  should  return 0', () => {
     expect(stringLength('')).toBe(0);
+  });
+});
+
+describe('stringcount tests', () => {
+  test('string Abebe should return ebebA', () => {
+    expect(reverseString('Abebe')).toBe("ebebA");
+  });
+  test('string n should NOT return Abebe', () => {
+    expect(reverseString('Abebe')).not.toBe('Abebe');
+  });
+  test('string  should  return ALEX', () => {
+    expect(cap('ALEX')).toBe('ALEX');
   });
 });
